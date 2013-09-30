@@ -375,7 +375,7 @@ namespace Kaltura
         private void ThrowExceptionOnAPIError(XmlElement result)
         {
             XmlElement error = result["error"];
-            if (error != null)
+            if (error != null && error.HasChildNodes == true)
                 throw new KalturaAPIException(error["code"].InnerText, error["message"].InnerText);
         }
 
