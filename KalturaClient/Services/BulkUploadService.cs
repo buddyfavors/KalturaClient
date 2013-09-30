@@ -75,7 +75,7 @@ namespace Kaltura
 		{
 			KalturaParams kparams = new KalturaParams();
 			kparams.AddIntIfNotNull("id", id);
-			_Client.QueueServiceCall("bulkupload", "get", kparams);
+			_Client.QueueServiceCall("bulkupload_bulk", "get", kparams);
 			if (this._Client.IsMultiRequest)
 				return null;
 			XmlElement result = _Client.DoQueue();
@@ -92,7 +92,7 @@ namespace Kaltura
 			KalturaParams kparams = new KalturaParams();
 			if (pager != null)
 				kparams.Add("pager", pager.ToParams());
-			_Client.QueueServiceCall("bulkupload", "list", kparams);
+			_Client.QueueServiceCall("bulkupload_bulk", "list", kparams);
 			if (this._Client.IsMultiRequest)
 				return null;
 			XmlElement result = _Client.DoQueue();
@@ -103,7 +103,7 @@ namespace Kaltura
 		{
 			KalturaParams kparams = new KalturaParams();
 			kparams.AddIntIfNotNull("id", id);
-			_Client.QueueServiceCall("bulkupload", "abort", kparams);
+			_Client.QueueServiceCall("bulkupload_bulk", "abort", kparams);
 			if (this._Client.IsMultiRequest)
 				return null;
 			XmlElement result = _Client.DoQueue();
